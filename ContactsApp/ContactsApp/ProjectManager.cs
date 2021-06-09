@@ -1,5 +1,9 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace ContactsApp
@@ -12,12 +16,12 @@ namespace ContactsApp
         /// <summary>
         /// Путь до папки сохранения "ContactsApp".
         /// </summary>
-        public static string PathToFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Contact\\";
+        public static string PathToFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Contacts\\";
 
         /// <summary>
         /// Полный путь до файла "ContactsApp.notes".
         /// </summary>
-        public static string PathToFile = PathToFolder + "\\ContactsApp.notes";
+        public static string PathToFile = PathToFolder + "\\ContactApp.notes";
         /// <summary>
         /// Метод сохранения данных в файл.
         /// </summary>
