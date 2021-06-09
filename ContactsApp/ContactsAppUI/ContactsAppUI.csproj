@@ -132,4 +132,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>md "$(SolutionDir)Installer\InstallScripts"
+md "$(SolutionDir)Installer\InstallScripts\Release" 
+md "$(SolutionDir)Installer\InstallScripts\Installer"
+xcopy "$(ProjectDir)$(OutDir)*.dll" "$(SolutionDir)Installer\InstallScripts\Release"
+xcopy "$(ProjectDir)$(OutDir)*.exe" "$(SolutionDir)Installer\InstallScripts\Release"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>rd /s /q "$(SolutionDir)Installer\InstallScripts\Release"
+rd /s /q "$(SolutionDir)Installer\InstallScripts\Installer"</PreBuildEvent>
+  </PropertyGroup>
 </Project>
